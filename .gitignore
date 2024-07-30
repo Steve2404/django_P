@@ -11,12 +11,10 @@ __pycache__/
 # Ignore les fichiers de configuration locaux
 *.env
 *.sqlite3
-*/.idea/
+/.idea/*
 
 # Ignore les fichiers de dépendances Python
 /.venv/
 /lib/
 /lib64/
 /bin/
-/include/
-/pyvenv.cfg
