@@ -1,0 +1,22 @@
+# Ignore les fichiers générés automatiquement
+__pycache__/
+*.pyc
+
+# Ignore les fichiers statiques collectés
+/staticfiles/
+
+# Ignore les fichiers de médias téléchargés
+/media/
+
+# Ignore les fichiers de configuration locaux
+*.env
+*.sqlite3
+*/.idea/
+
+# Ignore les fichiers de dépendances Python
+/.venv/
+/lib/
+/lib64/
+/bin/
+/include/
+/pyvenv.cfg
