@@ -1,21 +1,26 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
-from listings.models import Band
-
+from listings.models import Listing, Band
 
 # Create your views here.
+
+bands = Band.objects.all()
+titres = Listing.objects.all()
+comb = zip(bands, titres)
+
+
 def hello(request):
-    band = Band.objects.all()
-    return HttpResponse(f"""
-    <h1> Hallo Django! </h1>
-    <p>Mes groupes preferes sont: </p>
-    <ul>
-        <li>Band 1: {band[0].name}</li>
-        <li>Band 2: {band[1].name}</li>
-        <li>Band 3: {band[2].name}</li>
-    </ul>
-    """)
+    return render(request, 'listings/hello.html', {'bands': bands, 'comb': comb})
 
 
 def about(request):
-    return HttpResponse('<h1>About</h1><p>Nous adorons merch</p>')
+    return render(request, 'listings/about.html')
+
+
+def listing(request):
+    return render(request, 'listings/listing.html', {'titres': titres})
+
+
+def contact(request):
+    return render(request, 'listings/contact.html')

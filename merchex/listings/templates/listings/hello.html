@@ -1,0 +1,12 @@
+{% extends 'listings/base.html' %}
+{% block content %}
+    <h1> Hallo Django! </h1>
+    <p>Mes groupes preferes sont et titre: </p>
+    <p>IL ya en tout {{ bands|length }} groupes dans la liste, a savoir: </p>
+    
+    {% for band, titre in comb %}
+    	<ul>
+            <li>Band {{ forloop.counter }}: {{ band.name}} -> {{ titre.title}}</li>
+        </ul>
+    {% endfor %}
+{% endblock %}
