@@ -11,7 +11,7 @@ comb = zip(bands, titres)
 
 
 def hello(request):
-    return render(request, 'listings/hello.html', {'bands': bands, 'comb': comb})
+    return render(request, 'listings/hello.html', {'bands': bands, 'comb': 'comb'})
 
 
 def about(request):
