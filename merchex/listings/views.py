@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
 from listings.models import Listing, Band
@@ -7,7 +6,7 @@ from listings.models import Listing, Band
 
 bands = Band.objects.all()
 titres = Listing.objects.all()
-comb = zip(bands, titres)
+# comb = zip(bands, titres)
 
 
 def hello(request):
