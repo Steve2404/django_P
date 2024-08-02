@@ -17,6 +17,7 @@ class Band(models.Model):
     )
     active = models.BooleanField(default=True)
     official_homepage = models.URLField(null=True, blank=True)
+    situation = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
