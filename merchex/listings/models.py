@@ -36,6 +36,7 @@ class Listing(models.Model):
     year = models.IntegerField(validators=[MinValueValidator(1900), MaxValueValidator(2100)], null=True, blank=True)
     type = models.CharField(max_length=2, choices=Type.choices)
     band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
+    town_name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
