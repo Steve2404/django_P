@@ -17,7 +17,6 @@ class Band(models.Model):
     )
     active = models.BooleanField(default=True)
     official_homepage = models.URLField(null=True, blank=True)
-    like_new = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
