@@ -4,13 +4,18 @@ from listings.models import Listing, Band
 
 # Create your views here.
 
-bands = Band.objects.all()
+
 titres = Listing.objects.all()
-# comb = zip(bands, titres)
 
 
-def hello(request):
-    return render(request, 'listings/hello.html', {'bands': bands, 'comb': 'comb'})
+def band_list(request):
+    bands = Band.objects.all()
+    return render(request, 'listings/band_list.html', {'bands': bands})
+
+
+def band_detail(request, band_id):
+    band = Band.objects.get(id=band_id)
+    return render(request, 'listings/band_details.html', {'band': band})
 
 
 def about(request):

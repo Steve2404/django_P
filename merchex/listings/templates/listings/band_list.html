@@ -1,0 +1,11 @@
+{% extends 'listings/base.html' %}
+{% block content %}
+    <h1> Groupes </h1>
+    <p>IL ya en tout {{ bands|length }} groupes dans la liste, a savoir: </p>
+    
+    {% for band in bands %}
+    	<ul>
+            <li>Band {{ forloop.counter }}: {{ band.name}}</li>
+        </ul>
+    {% endfor %}
+{% endblock %}
