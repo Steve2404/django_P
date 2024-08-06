@@ -1,3 +1,30 @@
 h1, h2 {
     background-color: green;
 }
+
+.errorlist {
+    margin-bottom: -10px;
+    color: red;
+}
+
+nav.add {
+    width: 100%;
+    display: flex;
+    color: white;
+}
+
+.add {
+    width: 250px;
+    font-size: 20px;
+    background-color: blue;
+    opacity: 0.5;
+    box-shadow: 2px 2px 4px #686262;
+    justify-content: center;
+
+}
+
+.add a {
+    text-decoration: none;
+    color: white;
+
+}

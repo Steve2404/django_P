@@ -1,0 +1,23 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+    <h1>La liste des Annonces de musiques:</h1>
+    <nav class="add">
+        <div class="add">
+            <a href="{% url 'listing_create' %}">Ajouter a new Annonce</a>
+        </div>
+    </nav>
+    <p>Il ya {{ titres|length }} Annonces au totals:</p>
+    {% for titre in titres %}
+        <ul>
+            <li>
+                Annonce {{ forloop.counter }}: 
+                <a href="{% url 'listing_detail' titre.id %}">
+                    {{ titre.title }}
+                </a>
+                - <a href="{% url 'listing_update' titre.id %}">[Editer]</a>
+            </li>
+        </ul>
+
+    {% endfor %}
+{% endblock %}

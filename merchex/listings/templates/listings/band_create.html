@@ -1,11 +1,9 @@
 {% extends 'listings/base.html' %}
-
 {% block content %}
-    <p>Nous sommes la pour vous aidez. </p>
-    <form action="" method="post" novalidate>
+    <h1>Ajoutez un Groupe</h1>
+    <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Envoyer">
     </form>
-
 {% endblock %}

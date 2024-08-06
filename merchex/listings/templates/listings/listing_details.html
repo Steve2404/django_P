@@ -1,0 +1,24 @@
+{% extends 'listings/base.html' %}
+{% block content %}
+
+    <h2>{{ titre.title }}</h2>
+    <ul>
+        <li>Sold: {{ titre.sold|yesno }}</li>
+        <li>Year: {{ titre.year }}</li>
+        <li>Type: {{ titre.get_type_display }}</li>
+        {% if titre.band %}
+            <li>Band: 
+                <a href="{% url 'band_detail' titre.band.id %}">
+                    {{ titre.band }}
+                </a>
+            </li>
+        {% else %}
+            <li>Band: {{ titre.band }}</li>
+        {% endif %} 
+    </ul>
+    <p>{{ titre.description }}</p>
+    <p>
+        <a href="{% url 'listing_list' %}">Retour liste des annonces </a>
+        <a href="{% url 'listing_update' titre.id %}">Modifier cette Annonce</a>
+    </p>
+{% endblock %}
