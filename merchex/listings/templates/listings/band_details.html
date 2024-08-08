@@ -21,6 +21,7 @@
     <p>
         <a href="{% url 'band_list' %}">Retournez a la liste des groupes </a>
         <a href="{% url 'band_update' band.id %}">Modifier ce groupe</a>
+        <a href="{% url 'band_delete' band.id %}">Supprimer ce groupe</a>
     </p>
 
 {% endblock %}

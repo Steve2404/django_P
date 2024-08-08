@@ -20,5 +20,6 @@
     <p>
         <a href="{% url 'listing_list' %}">Retour liste des annonces </a>
         <a href="{% url 'listing_update' titre.id %}">Modifier cette Annonce</a>
+        <a href="{% url 'listing_delete' titre.id  %}">Supprimer cette Annonce</a>
     </p>
 {% endblock %}

@@ -92,3 +92,21 @@ def listing_update(request, listing_id):
     else:
         form = ListingForm(instance=ls)
         return render(request, 'listings/listing_update.html', {'form': form})
+
+
+def band_delete(request, band_id):
+    band = Band.objects.get(id=band_id)
+    if request.method == 'POST':
+        band.delete()
+        return redirect('band_list')
+    return render(request, 'listings/bansd_delete.html', {'band': band})
+
+
+def listing_delete(request, listing_id):
+    liste = Listing.objects.get(id=listing_id)
+    if request.method == 'POST':
+        liste.delete()
+        return redirect('listing_list')
+
+    return render(request, 'listings/listing_delete.html',
+                  {'liste': liste})
